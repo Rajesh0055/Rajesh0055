@@ -1,6 +1,6 @@
 
 
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="!showHeaderAndSidebar">
     <div class="row">
         <div id="content">
             <!-- topbar -->
@@ -130,3 +130,6 @@
  </div>
   </div>
   
+  <div *ngIf="showHeaderAndSidebar">
+   <router-outlet></router-outlet>
+  </div>

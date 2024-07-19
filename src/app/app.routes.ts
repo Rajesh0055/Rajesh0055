@@ -7,6 +7,7 @@ import { QueryComponent } from './query/query.component';
 import { ReportsComponent } from './reports/reports.component';
 import { UsersComponent } from './users/users.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 export const routes: Routes = [
     { path:'main-index', component:DashboardPageComponent},
@@ -17,4 +18,7 @@ export const routes: Routes = [
     { path:'reports-page', component:ReportsComponent},
     { path:'users-page', component:UsersComponent},
     { path:'sidebar-page', component:SideBarComponent},
+    { path:'login-page', component:LoginPageComponent},
+    { path: '**', redirectTo: 'login-page' } // Redirect unknown paths to login
+
 ];

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { Router, NavigationEnd } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -10,16 +12,29 @@ import { SideBarComponent } from './side-bar/side-bar.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent  {
   isCollapsed: any=false;
+  isLogin:any=false;
+  showHeaderAndSidebar: boolean = true;
 
   title = 'angular-app';
 
-  // onSliderValueChange(value: boolean) {
-  //   this.sidebarCollapsed = value;
+  constructor(private router: Router,  private activeRoute: ActivatedRoute) {
+    
+  }
 
-  // }
 
+  ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Hide header and sidebar for login route
+        this.showHeaderAndSidebar = this.router.url.includes('login-page');
+      }
+    });
+  }
+
+ 
+ 
   toggleSidebar():void {
 
     this.isCollapsed = !this.isCollapsed;
