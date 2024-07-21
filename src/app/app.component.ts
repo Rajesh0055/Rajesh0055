@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { Router, NavigationEnd } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
