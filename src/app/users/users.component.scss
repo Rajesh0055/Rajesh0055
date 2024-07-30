@@ -1,0 +1,31 @@
+
+.table-hover tbody tr:hover {
+    background-color: #ff5722 !important; /* Customize this color as needed */
+  }
+
+  .table thead th {
+    background-color: #15283c !important; /* Replace with your preferred color */
+    color: white !important; /* Optionally change the text color for better contrast */
+  }
+
+/* Ensure the table fits within the container */
+.table-responsive {
+  overflow-x: auto;
+}
+
+
+.active-row {
+    // background-color: navy;
+    color: navy;
+}
+.inactive-row {
+    color: Red;
+}
+
+
+.child-div {
+    background-color: #f8f9fa; /* Light gray background for visibility */
+    border: 1px solid #dee2e6; /* Border for visibility */
+    padding: 20px;
+    text-align: center;
+}
